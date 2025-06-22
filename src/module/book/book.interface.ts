@@ -1,3 +1,4 @@
+import { Model } from "mongoose"
 
 export interface IBook {
     title : string,
@@ -7,4 +8,13 @@ export interface IBook {
     description : string,
     copies : number,
     available  : boolean
+}
+
+
+export interface IBookMethods {
+  checkCopies(quantity: number): Promise<void>;
+}
+
+export interface IBookModel extends Model<IBook, {}, IBookMethods>{
+
 }

@@ -1,5 +1,5 @@
 import { model, Schema } from "mongoose";
-import { IBook } from "./book.interface";
+import { IBook, IBookModel } from "./book.interface";
 
 const bookSchema = new Schema<IBook>(
     {
@@ -20,5 +20,16 @@ const bookSchema = new Schema<IBook>(
     }
 ) 
 
-const Book = model<IBook>("Book", bookSchema);
+bookSchema.method("checkCopies", async  function(quantity : number) {
+   if(this.copies < quantity){
+      throw new Error("Not enough copies available");
+   }
+   this.copies -= quantity;
+   if(this.copies === 0){
+     this.available = false;
+   }
+   await this.save();
+})
+
+const Book = model<IBook, IBookModel>("Book", bookSchema);
 export default Book;
