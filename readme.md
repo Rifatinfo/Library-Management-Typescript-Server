@@ -28,14 +28,17 @@ A RESTful API built with **Express.js**, **TypeScript**, and **MongoDB** for man
 ## ⚙️ Setup Instructions
 
 
-```bash
-live Link  https://github.com/Rifatinfo/Library-Management-Typescript-Server.git
+<pre>
+live Link  https://library-management-typescript-serve.vercel.app/
+</pre>
+
+---
 
 ### 1. Clone the Repository
 
 ```bash
 git clone https://github.com/Rifatinfo/Library-Management-Typescript-Server.git
-cd library-api
+cd library-api 
 
 ##  Environment Variables
 
