@@ -50,15 +50,14 @@ MONGODB_URI=mongodb://localhost:27017/LibraryDB</pre>
 
 ##  Run the Server
 
-```bash
-npm run dev
 
-## Get All Books (with filter, sort, limit)
+---
 
-```bash 
-GET /api/books?filter=FANTASY&sortBy=title&sort=asc&limit=5
 
-```bash
+
+## Folder structure 
+
+<pre>
 src/
 ├── controllers/
 ├── models/
@@ -66,3 +65,35 @@ src/
 ├── utils/
 ├── config/
 ├── index.ts
+</pre>
+
+## API Details
+
+###  Book JSON
+<pre>
+{
+  "title": "The Theory of Everything",
+  "author": "Stephen Hawking",
+  "genre": "SCIENCE",
+  "isbn": "9780553380163",
+  "description": "An overview of cosmology and black holes.",
+  "copies": 5,
+  "available": true
+}
+</pre>
+
+###  Borrow JSON
+<pre>
+ {
+  "bookId": "6856b6b4d3c59ecf5fc1c04d",
+  "quantity": 1,
+  "dueDate": "2025-07-01"
+}
+</pre>
+
+
+
+## Get All Books (with filter, sort, limit)
+
+```bash 
+GET /api/books?filter=FANTASY&sortBy=title&sort=asc&limit=5
