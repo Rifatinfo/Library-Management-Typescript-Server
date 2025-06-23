@@ -36,15 +36,17 @@ live Link  https://library-management-typescript-serve.vercel.app/
 
 ### 1. Clone the Repository
 
-```bash
+<pre>
 git clone https://github.com/Rifatinfo/Library-Management-Typescript-Server.git
 cd library-api 
+</pre>
 
+---
 ##  Environment Variables
 
-```bash 
-PORT=5000
-MONGODB_URI=mongodb://localhost:27017/LibraryDB
+ 
+<pre>PORT=5000
+MONGODB_URI=mongodb://localhost:27017/LibraryDB</pre>
 
 ##  Run the Server
 
