@@ -26,7 +26,18 @@ const createBook = async (req: Request, res: Response) => {
 }
 const getBook = async (req: Request, res: Response) => {
     try {        
-        const data = await Book.find();
+        const query : any = {};
+        if(req.query.filter){
+            query.genre = req.query.filter;
+        }
+        
+        const sortedField = req.query.sortBy as string || "createdAt" ; 
+        const sortOrder =( req.query.sort === "asc") ||  (req.query.sort === "des" ) ? 1 : -1;
+        const limit = Number(req.query.limit) || 5;
+        
+        const data = await Book.find(query)
+        .sort({[sortedField] : sortOrder})
+        .limit(limit)
         res.json({
             success: true,
             message: "Books retrieved successfully",
